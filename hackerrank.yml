@@ -1,0 +1,22 @@
+---
+version: 1.0
+configuration:
+  has_webserver: true
+  readonly_paths:
+    - src/tsconfig.spec.json
+    - src/app/app.component.css
+    - src/app/app.module.ts
+    - src/app/app.component.spec.ts
+    - src/app/football-matches/football-matches.component.spec.ts
+  scoring:
+    command: "bash bin/env_setup && . $HOME/.nvm/nvm.sh && npm test"
+    files:
+      - unit.xml
+  ide_config:
+    default_open_files:
+      - src/app/football-matches/football-matches.component.html
+      - src/app/football-matches/football-matches.component.ts
+    project_menu:
+      run: bash bin/env_setup && . $HOME/.nvm/nvm.sh && npm start
+      install: bash bin/env_setup && . $HOME/.nvm/nvm.sh && npm install
+      test: bash bin/env_setup && . $HOME/.nvm/nvm.sh && npm test
